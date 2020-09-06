@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Attendee
 {
@@ -49,6 +50,42 @@ namespace Attendee
         public bool Attended
         {
             get { return _attended; }
+        }
+
+        /// <summary>
+        /// Gets and sets the surname of the attendee
+        /// </summary>
+        public string Surname
+        {
+            get { return _surnname; }
+            set { _surnname = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the firstname of the attendee
+        /// </summary>
+        public string Firstname
+        {
+            get { return _firstname; }
+            set { _firstname = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the year level of the attendee
+        /// </summary>
+        public int YearLevel
+        {
+            get { return _yearLevel; }
+            set { _yearLevel = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the school of the attendee
+        /// </summary>
+        public string School
+        {
+            get { return _school; }
+            set { _school = value; }
         }
     }
 }
