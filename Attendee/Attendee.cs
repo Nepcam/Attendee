@@ -9,15 +9,16 @@ namespace Attendee
 {
     class Attendee
     {
-        // fields
+        #region Fields
         private int _id;
         private string _firstname;
         private string _surnname;
         private string _school;
         private int _yearLevel;
         private bool _attended;
+        #endregion
 
-        // constructor
+        #region Constructor
         /// <summary>
         /// Initialises the object to the values passed in
         /// </summary>
@@ -35,7 +36,9 @@ namespace Attendee
             _yearLevel = yearLevel;
             _attended = false;
         }
+        #endregion
 
+        #region Properties
         /// <summary>
         /// Gets the id of the attendee 
         /// </summary>
@@ -87,5 +90,41 @@ namespace Attendee
             get { return _school; }
             set { _school = value; }
         }
+        #endregion
+
+        #region Methods
+        /// <summary>
+        /// Returns back all information about an attendee.
+        /// </summary>
+        /// <returns>All information in a neatly padded out string</returns>
+        public override string ToString()
+        {
+            return ID.ToString().PadRight(5) + Firstname.PadRight(10) + Surname.PadRight(10) + School.PadRight(20) + YearLevel.ToString().PadRight(5) + Attended.ToString().PadRight(8) + CalcFee().ToString("c");
+        }
+
+        /// <summary>
+        /// Sets the attended value to true
+        /// </summary>
+        public void Register()
+        {
+            _attended = true;
+        }
+
+        /// <summary>
+        /// Gets the fee for the attendee
+        /// </summary>
+        /// <returns>The fees the attendee has to pay</returns>
+        public decimal CalcFee()
+        {
+            if(_yearLevel >= 12)
+            {
+                return 25;
+            }
+            else
+            {
+                return 15;
+            }
+        }
+        #endregion
     }
 }
